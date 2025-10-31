@@ -23,12 +23,12 @@ data "aws_ami" "al2023" {
 }
 
 resource "aws_key_pair" "this" {
-  key_name   = "${var.project_name}-kp"
+  key_name   = "${var.project_name}-kp-v2"
   public_key = var.public_ssh_key
 }
 
 resource "aws_security_group" "this" {
-  name        = "${var.project_name}-sg"
+  name        = "${var.project_name}-sg-v2"
   description = "Acceso SSH limitado e HTTP publico"
 
   ingress {
